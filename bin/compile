@@ -107,7 +107,9 @@ echo "-----> Building with Leiningen"
 
 # Calculate build command
 if [ "$BUILD_COMMAND" = "" ]; then
-    echo ">>> `ls $BUILD_DIR`"
+    echo ">>> `pwd`"
+    echo ">>> `echo $(basename $BUILD_DIR)`"
+    echo ">>> `ls $BUILD_DIR/bin`"
     if [ -x $BUILD_DIR/bin/build ]; then
         echo "       Found bin/build; running it instead of default lein invocation."
         BUILD_COMMAND=bin/build
